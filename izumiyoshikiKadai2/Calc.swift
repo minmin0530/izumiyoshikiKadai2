@@ -13,10 +13,8 @@ class Calc {
         case sub
         case sum
         case div
-        case neutral
     }
     static let inputTextFieldMessage: String = "数字を入力してください"
-    private let neutralMessage: String = "+-×÷を選んでください"
     private let zeroMessage: String = "0以外を入力してください"
     private let digitsMessage: String = "桁数が大き過ぎます"
     private var result: String?
@@ -38,8 +36,6 @@ class Calc {
             } else {
                 result = Double(num1 / num2).description
             }
-        case .neutral:
-            result = neutralMessage
         }
         return result!
     }

@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,57 +35,15 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ASp-fq-aS1">
-                                        <rect key="frame" x="0.0" y="88" width="160" height="31"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RET-7J-DL5">
-                                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="31"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="+">
-                                                    <backgroundConfiguration key="background" cornerRadius="0.0"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="calcAddButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tPZ-Gr-T3n"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEd-oQ-9W3">
-                                                <rect key="frame" x="40.5" y="0.0" width="39" height="31"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="-">
-                                                    <backgroundConfiguration key="background" cornerRadius="0.0"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="calcSubButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vGa-OG-xp8"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRa-0V-Vli">
-                                                <rect key="frame" x="80.5" y="0.0" width="39.5" height="31"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="×">
-                                                    <backgroundConfiguration key="background" cornerRadius="0.0"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="calcSumButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YPx-7s-rYR"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qI-gd-yML">
-                                                <rect key="frame" x="121" y="0.0" width="39" height="31"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="÷">
-                                                    <backgroundConfiguration key="background" cornerRadius="1"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="calcDivButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mSU-84-ism"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.19607841970000001" green="0.45098042490000001" blue="0.86274516580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </stackView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AJL-37-JUn">
+                                        <rect key="frame" x="0.0" y="88" width="160" height="32"/>
+                                        <segments>
+                                            <segment title="＋"/>
+                                            <segment title="−"/>
+                                            <segment title="×"/>
+                                            <segment title="÷"/>
+                                        </segments>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yph-3i-w9h">
                                         <rect key="frame" x="0.0" y="129" width="160" height="31"/>
                                         <state key="normal" title="Button"/>
@@ -115,13 +72,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calcAddButton" destination="RET-7J-DL5" id="FmZ-lc-6mH"/>
-                        <outlet property="calcButtonsStackView" destination="ASp-fq-aS1" id="FiH-co-rFH"/>
-                        <outlet property="calcDivButton" destination="1qI-gd-yML" id="tSf-rx-1a8"/>
-                        <outlet property="calcSubButton" destination="GEd-oQ-9W3" id="P7j-A5-Q6K"/>
-                        <outlet property="calcSumButton" destination="PRa-0V-Vli" id="LkO-x2-22p"/>
                         <outlet property="inputNumberTextField1" destination="cxq-gJ-ADK" id="KT5-IL-Qhx"/>
                         <outlet property="inputNumberTextField2" destination="8b0-Vl-Y6X" id="efN-qd-VHJ"/>
+                        <outlet property="operatorSegmentedControl" destination="AJL-37-JUn" id="iNa-wx-2AY"/>
                         <outlet property="resultLabel" destination="CeU-6U-2yS" id="C1W-wu-YEd"/>
                     </connections>
                 </viewController>
@@ -130,9 +83,4 @@
             <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
